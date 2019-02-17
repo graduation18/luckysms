@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="left"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_sms"
+        android:textColor="#3d3d3d"
+        android:background="@drawable/chat_agent2"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="left"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_sms"
+        android:textColor="#000"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        />
+
+</LinearLayout>

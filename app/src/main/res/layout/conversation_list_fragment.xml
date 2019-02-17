@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_home"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        style="@style/ToolBarStyle.Event"
+        >
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:id="@+id/search_edt"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:layout_gravity="center"
+            android:hint="Search Contacts"
+            android:textColorHint="#9C9C9C"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="#9C9C9C"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_message"
+            android:layout_gravity="right"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:layout_marginRight="10dp"
+            android:drawablePadding="20dp"
+
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/conversation_recycler"/>
+</LinearLayout>

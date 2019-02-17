@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="420"
+            android:layout_weight="1"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/file_name"
+                android:maxLength="420"
+                android:background="@drawable/chat_agent2"
+                android:padding="5dp"/>
+
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirm"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:background="@drawable/chat_agent"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discard"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="Discard"
+                android:textColor="@color/white"
+                android:background="@drawable/chat_agent"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

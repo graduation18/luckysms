@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <AutoCompleteTextView
+
+            android:id="@+id/sms_number"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/chat_agent2"
+
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:hint="To...."/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="420"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sms_message"
+            android:maxLength="420"
+            android:background="@drawable/chat_agent2"
+            android:padding="5dp"/>
+
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+        android:id="@+id/single_day_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/chat_agent2"
+        app:picker_curved="true"
+        app:picker_cyclic="true"
+        app:picker_displayMinutes="true"
+        app:picker_visibleItemCount="7"
+        app:picker_textSize="20dp"
+
+
+        />
+        <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirm"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:text="Confirm"
+        android:background="@drawable/chat_agent"
+        android:textColor="@color/white"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/discard"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:text="Discard"
+        android:background="@drawable/chat_agent"
+        android:textColor="@color/white"/>
+</LinearLayout>
+
+    </LinearLayout>

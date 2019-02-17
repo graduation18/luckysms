@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "355601629984",
+    "firebase_url": "https://luckysms-dcacd.firebaseio.com",
+    "project_id": "luckysms-dcacd",
+    "storage_bucket": "luckysms-dcacd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355601629984:android:4a9af659c26c57cf",
+        "android_client_info": {
+          "package_name": "com.example.gaber.luckysms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355601629984-3vguma5bmkiiqt74nd08nvds21f1u0s2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gaber.luckysms",
+            "certificate_hash": "da436ca416327427ffa44478a91c2ae1ea5100cb"
+          }
+        },
+        {
+          "client_id": "355601629984-mscjf3o0fbqu511tajvk9m5s8kvjont2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb2-p7kyE9nkD60SfV4mmQUu8zu90-_lE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355601629984-mscjf3o0fbqu511tajvk9m5s8kvjont2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

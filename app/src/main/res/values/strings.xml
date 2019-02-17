@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">lucky sms</string>
+    <string name="tab1">contacts</string>
+    <string name="title_activity_messages">messages</string>
+    <string name="tab2">conversations</string>
+    <string name="tab4">hold_messages</string>
+    <string name="tab5">settings</string>
+    <string name="tab3">delayed_messages</string>
+    <string name="delete">Delete</string>
+    <string name="action_search">Search</string>
+    <string name="settings">Settings</string>
+</resources>
