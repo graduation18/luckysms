@@ -67,6 +67,8 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.languages.ArabicLigaturizer;
+import com.itextpdf.text.pdf.languages.LanguageProcessor;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -437,7 +439,7 @@ public class messages extends AppCompatActivity {
 
 
 
-    public static final String FONT = "assets/gom.ttf";
+    public static final String FONT = "assets/arialuni.ttf";
     public static final String ARABIC = "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a";
 
     public void write(String fname, String fcontent) throws IOException, DocumentException {
@@ -450,13 +452,12 @@ public class messages extends AppCompatActivity {
         }
         PdfWriter.getInstance(document,
                 new FileOutputStream(file.getAbsoluteFile()));
+        LanguageProcessor al = new ArabicLigaturizer();
         document.open();
-        Font f = FontFactory.getFont(FONT, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        Font chapterFont = FontFactory.getFont("assets/arial.ttf", BaseFont.IDENTITY_H, 16, Font.BOLDITALIC);
         PdfPTable table = new PdfPTable(1);
         Phrase phrase = new Phrase();
-        Chunk chunk = new Chunk(fcontent);
-        phrase.add(chunk);
-        phrase.add(new Chunk(fcontent));
+        phrase.add(new Chunk(fcontent,chapterFont));
         PdfPCell cell = new PdfPCell(phrase);
         cell.setUseDescender(true);
         cell.setRunDirection(PdfWriter.RUN_DIRECTION_RTL);
