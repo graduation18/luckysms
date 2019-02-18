@@ -1,12 +1,18 @@
 package com.example.gaber.luckysms.custom;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.gaber.luckysms.activities.confirm_code;
+import com.example.gaber.luckysms.activities.mobile_authentication;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -27,6 +33,7 @@ public class AppStatus {static Context context;
     private static AppStatus instance = new AppStatus();
     ConnectivityManager connectivityManager;
     boolean connected = false;
+    public String token;
 
     public static AppStatus getInstance(Context ctx) {
         context = ctx.getApplicationContext();
@@ -49,27 +56,31 @@ public class AppStatus {static Context context;
         }
         return connected;
     }
-    public String get_manger_token(){
-        final ArrayList<String >arrayList=new ArrayList<>();
-        FirebaseDatabase.getInstance().getReference().child("manager")
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChildren()){
-                            arrayList.clear();
-                            for(DataSnapshot ds:dataSnapshot.getChildren()){
-                                arrayList.add(ds.child("token").getValue(String.class));
-                            }
-                        }
+    public String  get_manger_token()
+    {
 
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("manager");
+
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+
+                    for (DataSnapshot sub_type : dataSnapshot.getChildren()) {
+                        token=sub_type.child("token").getValue(String.class);
                     }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                }
+            }
 
-                    }
-                });
-        return arrayList.get(0);
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("khgj",databaseError.getMessage());
+
+
+            }
+        });
+        return token;
     }
 
 }

@@ -4,40 +4,40 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="please type here the 6 digits code we sent to you"
-    android:textSize="20dp"
-    android:textAlignment="center"
-    android:layout_margin="15dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="please type here the 6 digits code we sent to you"
+      android:textSize="20dp"
+      android:textAlignment="center"
+      android:layout_margin="15dp"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/sms_code"
+      android:orientation="vertical">
+    <com.poovam.pinedittextfield.LinePinField
+        android:id="@+id/lineField"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sms_code"
-        android:orientation="vertical">
-        <com.poovam.pinedittextfield.LinePinField
-            android:id="@+id/lineField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:inputType="text"
-            android:textSize="16sp"
-            android:textSelectHandle="@drawable/text_handle"
-            app:noOfFields="6"
-            app:distanceInBetween="5dp"
-            android:layout_gravity="center"/>
+        android:layout_margin="20dp"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:textSelectHandle="@drawable/text_handle"
+        app:noOfFields="6"
+        app:distanceInBetween="5dp"
+        android:layout_gravity="center"/>
 
-        <ProgressBar
-            android:id="@+id/progress2"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="5dp"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+  </LinearLayout>
 
 
 

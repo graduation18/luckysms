@@ -47,33 +47,33 @@
 
 
         <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/confirm"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:text="Confirm"
-        android:textColor="@color/white"
-        android:background="@drawable/chat_agent"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirm"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:background="@drawable/chat_agent"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/discard"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:text="Discard"
-        android:textColor="@color/white"
-        android:background="@drawable/chat_agent"/>
-</LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discard"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="Discard"
+                android:textColor="@color/white"
+                android:background="@drawable/chat_agent"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

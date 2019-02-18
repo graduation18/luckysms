@@ -81,7 +81,7 @@ public class mobile_authentication extends AppCompatActivity {
 
     }
 
-    private void check_user(final String phone, final String country_code)
+    private void check_user(final String sub_phone, final String phone)
     {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users");
@@ -92,7 +92,7 @@ public class mobile_authentication extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     boolean found=false;
                     for (DataSnapshot sub_type : dataSnapshot.getChildren()) {
-                        if (sub_type.child("contact_phoneNumber").getValue(String .class).contains(phone)){
+                        if (sub_type.child("contact_phoneNumber").getValue(String .class).contains(sub_phone)){
                             if (!sub_type.hasChild("device_id")){
                                 sub_type.getRef().child("device_id").setValue(Settings.Secure.getString(getContentResolver(),
                                         Settings.Secure.ANDROID_ID));
@@ -114,13 +114,13 @@ public class mobile_authentication extends AppCompatActivity {
                     if (found){
                         Intent got_confirm_code=new Intent(mobile_authentication.this,confirm_code.class);
                         Log.w("dsaldj",phone);
-                        got_confirm_code.putExtra("phone_number",country_code+phone);
+                        got_confirm_code.putExtra("phone_number",phone);
                         startActivity(got_confirm_code);
                         finish();
                     }else {
                         Toast.makeText(getApplicationContext(),"you'r not allowed to use this application please call the manager",Toast.LENGTH_LONG).show();
                         String token=AppStatus.getInstance(getApplicationContext()).get_manger_token();
-                        send_message("+"+ccp.getSelectedCountryCode()+phone,token);
+                        send_message(phone,token);
                     }
 
                 }else {

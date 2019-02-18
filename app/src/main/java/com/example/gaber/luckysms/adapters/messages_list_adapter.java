@@ -2,6 +2,7 @@ package com.example.gaber.luckysms.adapters;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -51,16 +52,31 @@ private List<sms_messages_model> contact_list;
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
+        if (viewType==1){
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.sms_item, parent, false);
             return new MyViewHolder(itemView);
+        }else {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.sms_item_reciver, parent, false);
+            return new MyViewHolder(itemView);
+        }
+
 
 
     }
 
 
+    @Override
+    public int getItemViewType(int position) {
+        sms_messages_model data=contact_list.get(position);
+        if (data.address.equals(context.getSharedPreferences("logged_in",Context.MODE_PRIVATE).getString("phone",""))){
+            return 1;
+        }else {
+            return 0;
+        }
 
+    }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
@@ -70,6 +86,11 @@ private List<sms_messages_model> contact_list;
         String dateText = df2.format(date);
          holder.text_sms.setText(data.body);
          holder.date_sms.setText(dateText);
+         if (holder.getItemViewType()==1) {
+             Drawable img = context.getResources().getDrawable(R.drawable.seen);
+             img.setBounds(0, 0, 33, 33);
+             holder.date_sms.setCompoundDrawables(img, null, null, null);
+         }
         ContentValues values = new ContentValues();
         values.put("read", true);
         context.getContentResolver().update(Uri.parse("content://sms/inbox"), values, "_id=" + data.id, null);
